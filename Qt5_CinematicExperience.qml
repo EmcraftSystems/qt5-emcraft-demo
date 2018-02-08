@@ -182,6 +182,10 @@ Item {
         id: errView
     }
 
+    VideoPlay {
+	id: video
+    }
+
     FpsItem {
         anchors.top: parent.top
         anchors.topMargin: 8
