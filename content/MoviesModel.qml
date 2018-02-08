@@ -22,27 +22,27 @@ ListModel {
 	gif: "mainscreen/Camera.gif"
     }
     ListElement {
-        name: "SYSTEM INFO"
+        name: "SYSTEM"
         image: "mainscreen/System-Info.png"
         image_bg: "mainscreen/System-Info_2.png"
-	gif: ""
+	gif: "mainscreen/System-Info.gif"
     }
     ListElement {
         name: "VIDEO"
         image: "mainscreen/Video.png"
         image_bg: "mainscreen/Video_2.png"
-	gif: ""
+	gif: "mainscreen/Video.gif"
     }
     ListElement {
         name: "CORTEX-M4"
         image: "mainscreen/Cortex-M4.png"
         image_bg: "mainscreen/Cortex-M4_2.png"
-	gif: ""
+	gif: "mainscreen/Cortex-M4.gif"
     }
     ListElement {
         name: "ALEXA"
-        image: "mainscreen/Cortex-M4.png"
-        image_bg: "mainscreen/Cortex-M4_2.png"
-	gif: ""
+        image: "mainscreen/Alexa.png"
+        image_bg: "mainscreen/Alexa_2.png"
+	gif: "mainscreen/Alexa.gif"
     }
 }

@@ -21,7 +21,7 @@ Item {
         NumberAnimation { duration: 500; easing.type: Easing.OutBack }
     }
     Behavior on scale {
-        NumberAnimation { duration: 1500; easing.type: Easing.OutElastic }
+        NumberAnimation { duration: 2500; easing.type: Easing.OutElastic }
     }
     Behavior on opacity {
         NumberAnimation { duration: 200; easing.type: Easing.OutQuad }
@@ -42,7 +42,7 @@ Item {
 
     Image {
         id: imageCloud
-        source: "images/mainscreen/svet.png"
+        source: "images/mainscreen/svet2.png"
         visible: true
     }
 
@@ -93,7 +93,7 @@ Item {
             style: Text.Raised
             styleColor: "black"
             //font.pixelSize: settings.fontL
-	    font.family: "Helios"
+	    font.family: "Calibri" //"Arial"
             font.pixelSize: 60
 	}
     }

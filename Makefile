@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Qt5_CinematicExperience1.0.0
-DISTDIR = /home/work/dk/imx8m/projects/rootfs/Qt5_CinematicExperience_rpi_1.0/.tmp/Qt5_CinematicExperience1.0.0
+DISTDIR = /home/work/dk/imx8m/projects/rootfs/qmldemo/.tmp/Qt5_CinematicExperience1.0.0
 LINK          = aarch64-poky-linux-g++  --sysroot=/home/opt/fsl-imx-fb/4.9.51-mx8-beta/sysroots/aarch64-poky-linux
 LFLAGS        = -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed --sysroot=/home/opt/fsl-imx-fb/4.9.51-mx8-beta/sysroots/aarch64-poky-linux -Wl,-O1
 LIBS          = $(SUBLIBS) -lQt5Quick -lQt5Gui -lQt5Qml -lQt5Network -lQt5Core -lGLESv2 -lEGL -lpthread 
@@ -599,8 +599,8 @@ uninstall_target: FORCE
 
 install_qml: first FORCE
 	@test -d $(INSTALL_ROOT)/opt/Qt5_CinematicExperience || mkdir -p $(INSTALL_ROOT)/opt/Qt5_CinematicExperience
-	-$(INSTALL_FILE) /home/work/dk/imx8m/projects/rootfs/Qt5_CinematicExperience_rpi_1.0/Qt5_CinematicExperience.qml $(INSTALL_ROOT)/opt/Qt5_CinematicExperience/
-	-$(INSTALL_DIR) /home/work/dk/imx8m/projects/rootfs/Qt5_CinematicExperience_rpi_1.0/content $(INSTALL_ROOT)/opt/Qt5_CinematicExperience/
+	-$(INSTALL_FILE) /home/work/dk/imx8m/projects/rootfs/qmldemo/Qt5_CinematicExperience.qml $(INSTALL_ROOT)/opt/Qt5_CinematicExperience/
+	-$(INSTALL_DIR) /home/work/dk/imx8m/projects/rootfs/qmldemo/content $(INSTALL_ROOT)/opt/Qt5_CinematicExperience/
 
 uninstall_qml: FORCE
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/Qt5_CinematicExperience/content

@@ -126,7 +126,7 @@ Item {
 
 	Text {
             id: poweredByText
-	    visible: true
+	    visible: false
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 25
             anchors.left: parent.left
@@ -138,7 +138,7 @@ Item {
             color: "#ffffff"
             //style: Text.Outline
             //styleColor: "#b0a030"
-	    font.family: "Helios"
+	    font.family: "Arial"
             font.pixelSize: 34
 	}
     }

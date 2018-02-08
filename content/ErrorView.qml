@@ -14,7 +14,6 @@ Item {
     anchors.verticalCenter: parent.verticalCenter
     anchors.horizontalCenter: parent.horizontalCenter
     visible: false
-//    modality: Qt.WindowModal
     
     function show() {
         mainView.scheduleUpdate();
@@ -49,28 +48,28 @@ Item {
 
     Image {
         id: errIcon
-	source: "images/errwin/error_icon.png"
-	width: imageBGItem.height * 0.8
-	height: imageBGItem.height * 0.8
-	anchors.verticalCenter: imageBGItem.verticalCenter
+	source: "images/errwin/error_logo.png"
+	//width: imageBGItem.height * 0.8
+	//height: imageBGItem.height * 0.8
+	anchors.top: imageBGItem.top
 	anchors.left: imageBGItem.left
-	anchors.margins: 30
+	anchors.margins: 100
     }
 
     Image {
         id: closeImg
-	source: "images/errwin/1icon.png"
-	anchors.top: imageBGItem.bottom
-	anchors.topMargin: 10
-	anchors.right: imageBGItem.right
+	source: "images/errwin/ok1.png"
+	anchors.bottom: imageBGItem.bottom
+	anchors.bottomMargin: 80
+	anchors.horizontalCenter: imageBGItem.horizontalCenter
 
 	MouseArea {
             anchors.fill: parent
 	    onPressed: {
-		closeImg.source = "images/errwin/2icon.png"
+		closeImg.source = "images/errwin/ok2.png"
 	    }
 	    onReleased: {
-		closeImg.source = "images/errwin/1icon.png"
+		closeImg.source = "images/errwin/ok1.png"
 	    }
             onClicked: {
 		errView.hide()
@@ -84,11 +83,13 @@ Item {
 	anchors.left: errIcon.right
 	anchors.leftMargin: 30
 	anchors.right: imageBGItem.right
-	anchors.rightMargin: 30
-	anchors.verticalCenter: imageBGItem.verticalCenter
-        color: "#000000"
-        style: Text.Raised
-        styleColor: "#000000"
+	anchors.rightMargin: 80
+	anchors.top: imageBGItem.top
+	anchors.topMargin: 110
+        color: "white"
+        //style: Text.Raised
+        //styleColor: "#000000"
+	font.family: "Arial"
         font.pixelSize: settings.fontS
         wrapMode: Text.WordWrap
     }
