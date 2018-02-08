@@ -31,8 +31,8 @@ Item {
         anchors.fill: parent
         onClicked: {
             if (isSelected) {
-                errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
-                errView.show();
+                //errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
+                video.show();
             } else {
                 listView.currentIndex = index;
                 if (settings.showShootingStarParticles) shootingStarBurst.burst(50);

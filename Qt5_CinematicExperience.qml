@@ -47,6 +47,10 @@ Item {
     ErrorView {
         id: errView
     }
+
+    VideoPlay {
+	id: video
+    }
 /*
     FpsItem {
         anchors.top: parent.top
