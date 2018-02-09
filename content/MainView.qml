@@ -119,9 +119,9 @@ Item {
 	     id: nxplogo
 	     source: "images/mainscreen/NXP_logo.gif"
 	     anchors.top: parent.top
-	     anchors.topMargin: 25
+	     //anchors.topMargin: 25
 	     anchors.right: parent.right
-	     anchors.rightMargin: 15
+	     //anchors.rightMargin: 15
 	}
 
 	Text {

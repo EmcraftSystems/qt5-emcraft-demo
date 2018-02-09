@@ -30,7 +30,7 @@ Item {
 	id: fon
 	anchors.fill: parent
 	color: "black"
-	opacity: 0.5
+	opacity: settings.modal_opacity
 
 	MouseArea {
             anchors.fill: parent
@@ -153,13 +153,43 @@ Item {
 
     Timer {
         interval: 1000; running: metricsView.isShown; repeat: true
+	property var cpu_load: [ 0, 0, 0, 0 ]
+	
+	function calc_load(cur, prev) {
+	    if (cur - prev > 100)
+		return "0%"
+	    return 100 - (cur - prev) + "%"
+	}
+
         onTriggered: {
 	    fps.text = Math.floor(35 + 10 * Math.random())
-	    temp.text = Math.floor(59 + 10 * Math.random())
+//	    temp.text = Math.floor(59 + 10 * Math.random())
 	    cpu0.text = Math.floor(100 * Math.random()) + "%"
 	    cpu1.text = Math.floor(100 * Math.random()) + "%"
 	    cpu2.text = Math.floor(100 * Math.random()) + "%"
 	    cpu3.text = Math.floor(100 * Math.random()) + "%"
+
+	    var request = new XMLHttpRequest()
+	    request.open("GET", "file:///sys/class/thermal/thermal_zone0/temp", false)
+	    request.send(null)
+	    temp.text = request.responseText / 1000
+
+	    request.open("GET", "file:///proc/stat", false)
+	    request.send(null)
+
+	    var lines = request.responseText.split('\n')
+
+	    if (cpu_load[0]) {
+		cpu0.text = calc_load(lines[1].split(' ')[4], cpu_load[0])
+		cpu1.text = calc_load(lines[2].split(' ')[4], cpu_load[1])
+		cpu2.text = calc_load(lines[3].split(' ')[4], cpu_load[2])
+		cpu3.text = calc_load(lines[4].split(' ')[4], cpu_load[3])
+	    }
+
+	    cpu_load[0] = parseInt(lines[1].split(' ')[4])
+	    cpu_load[1] = parseInt(lines[2].split(' ')[4])
+	    cpu_load[2] = parseInt(lines[3].split(' ')[4])
+	    cpu_load[3] = parseInt(lines[4].split(' ')[4])
 	}
     }
 

@@ -26,6 +26,7 @@ Item {
         property bool showShootingStarParticles: true
         property bool showLighting: true
         property bool showColors: true
+        property real modal_opacity: 0.75
     }
 
     MainView {

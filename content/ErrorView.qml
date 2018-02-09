@@ -30,7 +30,7 @@ Item {
 	id: fon
 	anchors.fill: parent
 	color: "black"
-	opacity: 0.5
+	opacity: settings.modal_opacity
 
 	MouseArea {
             anchors.fill: parent
