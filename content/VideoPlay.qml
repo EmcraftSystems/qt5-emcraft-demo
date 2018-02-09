@@ -42,24 +42,54 @@ Item {
 
     Video {
 	id: vid
-	//width : parent.width/100*70
-	//height : parent.height/100*70
-	anchors.fill: parent
-	anchors.verticalCenter: parent.verticalCenter
+	width : parent.width/100*65
+	height : parent.height/100*65
+	//anchors.fill: parent
 	anchors.horizontalCenter: parent.horizontalCenter
+	anchors.verticalCenter: parent.verticalCenter
+	anchors.verticalCenterOffset: -40
 	//z: 5
 	source: "demo.mp4"
 	//visible: false
 
-	MouseArea {
-	    anchors.fill: parent
-	    onClicked: {
-		console.log("RUn: ", MediaPlayer.PlayingState)
-		if (!MediaPlayer.PlayingState) {
-		    parent.play()
-		} else {
-		    parent.stop()
-		    root.hide()
+	Image {
+	    id: frame
+	    width : parent.width/100*110
+	    height : parent.height/100*140
+	    z: -1
+	    //anchors.fill: parent
+	    anchors.horizontalCenter: parent.horizontalCenter
+	    anchors.top: parent.top
+	    anchors.topMargin: -80
+	    source: "images/Video/fon_video.png"
+	    visible: true
+	}
+
+	Image {
+	    id: closeBtn
+	    anchors.bottom: frame.bottom
+	    anchors.bottomMargin: 60
+	    anchors.horizontalCenter: frame.horizontalCenter
+
+	    source: "images/errwin/ok1.png"
+	    visible: true
+
+	    MouseArea {
+		anchors.fill: parent
+		onPressed: {
+		    closeBtn.source = "images/errwin/ok2.png"
+		}
+		onReleased: {
+		    closeBtn.source = "images/errwin/ok1.png"
+		}
+		onClicked: {
+		    console.log("RUn: ", MediaPlayer.PlayingState)
+		    if (!MediaPlayer.PlayingState) {
+			vid.play()
+		    } else {
+			vid.stop()
+			root.hide()
+		    }
 		}
 	    }
 	}
