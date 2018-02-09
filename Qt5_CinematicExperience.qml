@@ -51,6 +51,19 @@ Item {
     VideoPlay {
 	id: video
     }
+
+    AboutView {
+	id: aboutView
+    }
+
+    SettingsView {
+	id: settingsView
+    }
+
+    MetricsView {
+	id: metricsView
+    }
+
 /*
     FpsItem {
         anchors.top: parent.top

@@ -41,8 +41,8 @@ ListModel {
     }
     ListElement {
         name: "ALEXA"
-        image: "mainscreen/Alexa.png"
+        image: "mainscreen/AmazonAlexa.png"
         image_bg: "mainscreen/Alexa_2.png"
-	gif: "mainscreen/Alexa.gif"
+	gif: "mainscreen/AmazonAlexa.gif"
     }
 }

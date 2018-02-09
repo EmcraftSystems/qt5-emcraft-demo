@@ -31,8 +31,14 @@ Item {
         anchors.fill: parent
         onClicked: {
             if (isSelected) {
-                //errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
-                video.show();
+		if (model.name == "VIDEO")
+                    video.show()
+		else if (model.name == "METRICS")
+		    metricsView.show()
+		else {
+                    errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
+		    errView.show()
+		}
             } else {
                 listView.currentIndex = index;
                 if (settings.showShootingStarParticles) shootingStarBurst.burst(50);
@@ -49,12 +55,6 @@ Item {
     Image {
         id: imageItem
         source: "images/" + (isSelected ? model.image : model.image_bg)
-        visible: true
-    }
-
-    AnimatedImage {
-        id: aniItem
-        source: "images/" + model.gif
         visible: true
     }
 
@@ -78,10 +78,10 @@ Item {
         //anchors.top: parent.top
 	height: parent.height * 0.8
 	width: parent.width * 0.9
-
+/*
 	Text {
             id: titleText
-	    visible: root1.isSelected
+	    visible: false //root1.isSelected
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: +150
             anchors.horizontalCenter: parent.horizontalCenter
@@ -95,20 +95,20 @@ Item {
             //font.pixelSize: settings.fontL
 	    font.family: "Calibri" //"Arial"
             font.pixelSize: 60
-	}
+	}*/
     }
-
+/*
     ShaderEffectSource {
         id: s2
         sourceItem: aniItem
         hideSource: settings.showLighting
-        visible: root1.isSelected
+        visible: false //root1.isSelected
     	anchors.verticalCenter: parent.verticalCenter
         //anchors.top: parent.top
 	height: parent.height * 0.8
 	width: parent.width * 0.9
     }
-
+*/
 /*
     FastBlur {
         anchors.fill: s1
@@ -118,10 +118,22 @@ Item {
 //        visible: root.blurAmount
     }
 */
+
+    AnimatedImage {
+        id: aniItem
+        source: "images/" + model.gif
+        visible: root1.isSelected
+	cache: false
+    	anchors.verticalCenter: parent.verticalCenter
+        //anchors.top: parent.top
+	height: parent.height * 0.8
+	width: parent.width * 0.9
+    }
+
     ShaderEffect {
         anchors.fill: imageItem
         property variant src: s1
-        property variant srcNmap: s2//coverNmapSource
+//        property variant srcNmap: s2//coverNmapSource
         property variant srcBG: s0//coverNmapSource
         property real widthPortition: mainView.width/imageItem.width
         property real heightPortition: mainView.height/imageItem.height

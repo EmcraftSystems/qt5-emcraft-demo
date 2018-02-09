@@ -86,8 +86,8 @@ Item {
 		     infoBtn.source = "images/mainscreen/info_1.png"
 		 }
 		 onClicked: {
-    		     errView.text = "Sorry, this demo is not yet implemented. Please check back later!"
-		     errView.show()
+    		     aboutView.text = ""
+		     aboutView.show()
 		 }
 	     }
 	}
@@ -109,8 +109,8 @@ Item {
 		     settingsBtn.source = "images/mainscreen/settings_1.png"
 		 }
 		 onClicked: {
-    		     errView.text = "Sorry, this demo is not yet implemented. Please check back later!"
-		     errView.show()
+    		     settingsView.text = ""
+		     settingsView.show()
 		 }
 	     }
 	}

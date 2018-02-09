@@ -8,8 +8,8 @@ Item {
     property string text
     property bool isShown: false
 
-    //width: settingsBG.width
-    //height: settingsBG.width
+    //width: aboutBG.width
+    //height: aboutBG.width
     anchors.fill: parent
     anchors.verticalCenter: parent.verticalCenter
     anchors.horizontalCenter: parent.horizontalCenter
@@ -40,8 +40,8 @@ Item {
     }
     
     Image {
-        id: settingsBG
-	source: "images/UI Settings/ui.png"
+        id: aboutBG
+	source: "images/About/about.png"
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.horizontalCenter: parent.horizontalCenter
     }
@@ -49,9 +49,9 @@ Item {
     Image {
         id: closeImg
 	source: "images/errwin/ok1.png"
-	anchors.bottom: settingsBG.bottom
+	anchors.bottom: aboutBG.bottom
 	anchors.bottomMargin: 80
-	anchors.horizontalCenter: settingsBG.horizontalCenter
+	anchors.horizontalCenter: aboutBG.horizontalCenter
 
 	MouseArea {
             anchors.fill: parent
@@ -72,9 +72,9 @@ Item {
 	text: root.text
 	anchors.left: errIcon.right
 	anchors.leftMargin: 30
-	anchors.right: settingsBG.right
+	anchors.right: aboutBG.right
 	anchors.rightMargin: 80
-	anchors.top: settingsBG.top
+	anchors.top: aboutBG.top
 	anchors.topMargin: 110
         color: "white"
         //style: Text.Raised
