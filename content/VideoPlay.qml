@@ -103,6 +103,10 @@ Item {
 	}
 
 	focus: true
+
+	onStopped: {
+	    root.hide()
+	}
     }
 
     states : State {
