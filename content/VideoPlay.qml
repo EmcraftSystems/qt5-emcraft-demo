@@ -7,24 +7,19 @@ Item {
     property string text
     property bool isShown: false
 
-    //width: imageBGItem.width
-    //height: imageBGItem.width
     anchors.fill: parent
     anchors.verticalCenter: parent.verticalCenter
     anchors.horizontalCenter: parent.horizontalCenter
     visible: false
-//    modality: Qt.WindowModal
     
     function show() {
         mainView.scheduleUpdate();
         root.isShown = true;
 	visible = true;
 	vid.play()
-//        showAnimation.restart();
     }
     function hide() {
 	visible = false;
-//        hideAnimation.restart();
     }
 
     Rectangle {
@@ -44,20 +39,16 @@ Item {
 	id: vid
 	width : parent.width/100*65
 	height : parent.height/100*65
-	//anchors.fill: parent
 	anchors.horizontalCenter: parent.horizontalCenter
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.verticalCenterOffset: -40
-	//z: 5
 	source: "demo.mp4"
-	//visible: false
 
 	Image {
 	    id: frame
 	    width : parent.width/100*110
 	    height : parent.height/100*140
 	    z: -1
-	    //anchors.fill: parent
 	    anchors.horizontalCenter: parent.horizontalCenter
 	    anchors.top: parent.top
 	    anchors.topMargin: -80
