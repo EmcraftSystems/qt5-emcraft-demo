@@ -35,9 +35,9 @@ ListModel {
     }
     ListElement {
         name: "VIDEO_FS"
-        image: "mainscreen/Video.png"
-        image_bg: "mainscreen/Video_2.png"
-	gif: "mainscreen/Video.gif"
+        image: "mainscreen/Video_fs.png"
+        image_bg: "mainscreen/Video_fs_2.png"
+	gif: "mainscreen/Video_fs.gif"
     }
     ListElement {
         name: "CORTEX-M4"

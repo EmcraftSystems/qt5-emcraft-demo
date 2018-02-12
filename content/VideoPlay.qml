@@ -17,6 +17,7 @@ Item {
         root.isShown = true;
 	visible = true;
 	vid.play()
+	console.log("VID ", vid.height, vid.width)
     }
     function hide() {
 	visible = false;
@@ -41,18 +42,18 @@ Item {
 	height : parent.height/100*65
 	anchors.horizontalCenter: parent.horizontalCenter
 	anchors.verticalCenter: parent.verticalCenter
-	anchors.verticalCenterOffset: -40
+	anchors.verticalCenterOffset: 20
 	source: "demo.mp4"
 
 	Image {
 	    id: frame
-	    width : parent.width/100*110
-	    height : parent.height/100*140
+	    width : parent.width * 1.1
+	    height : parent.height * 1.21
 	    z: -1
 	    anchors.horizontalCenter: parent.horizontalCenter
 	    anchors.top: parent.top
-	    anchors.topMargin: -80
-	    source: "images/Video/fon_video.png"
+	    anchors.topMargin: -100
+	    source: "images/Video/video_back.png"
 	    visible: true
 	}
 
@@ -72,20 +73,23 @@ Item {
 
 	Image {
 	    id: closeBtn
-	    anchors.bottom: frame.bottom
-	    anchors.bottomMargin: 60
-	    anchors.horizontalCenter: frame.horizontalCenter
+	    height: sourceSize.height * 0.8
+	    width: sourceSize.width * 0.8
+	    anchors.top: frame.top
+	    anchors.topMargin: height - 16
+	    anchors.right: frame.right
+	    anchors.rightMargin: width + 10
 
-	    source: "images/errwin/ok1.png"
+	    source: "images/Video/close.png"
 	    visible: true
 
 	    MouseArea {
 		anchors.fill: parent
 		onPressed: {
-		    closeBtn.source = "images/errwin/ok2.png"
+		    closeBtn.source = "images/Video/close_1.png"
 		}
 		onReleased: {
-		    closeBtn.source = "images/errwin/ok1.png"
+		    closeBtn.source = "images/Video/close.png"
 		}
 		onClicked: {
 		    if (!MediaPlayer.PlayingState) {
@@ -108,6 +112,10 @@ Item {
 	    anchors.fill: vid.parent
 	    height: undefined
 	    width: undefined
+	}
+	PropertyChanges {
+	    target: frame
+	    visible: false
 	}
 	PropertyChanges {
 	    target: fs_area
