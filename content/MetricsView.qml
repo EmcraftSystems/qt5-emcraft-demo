@@ -162,12 +162,7 @@ Item {
 	}
 
         onTriggered: {
-	    fps.text = Math.floor(35 + 10 * Math.random())
-//	    temp.text = Math.floor(59 + 10 * Math.random())
-	    cpu0.text = Math.floor(100 * Math.random()) + "%"
-	    cpu1.text = Math.floor(100 * Math.random()) + "%"
-	    cpu2.text = Math.floor(100 * Math.random()) + "%"
-	    cpu3.text = Math.floor(100 * Math.random()) + "%"
+	    fps.text = fpsItem.fps //Math.floor(35 + 10 * Math.random())
 
 	    var request = new XMLHttpRequest()
 	    request.open("GET", "file:///sys/class/thermal/thermal_zone0/temp", false)

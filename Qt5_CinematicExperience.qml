@@ -65,11 +65,11 @@ Item {
 	id: metricsView
     }
 
-/*
     FpsItem {
+    	id: fpsItem
         anchors.top: parent.top
-        anchors.topMargin: 8
+        anchors.topMargin: -100
         anchors.left: parent.left
         anchors.leftMargin: 8
-    } */
+    }
 }
