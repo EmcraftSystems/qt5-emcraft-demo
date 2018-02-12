@@ -65,6 +65,20 @@ Item {
 	    visible: true
 	}
 
+	MouseArea {
+	    id: fs_area
+	    enabled: false
+	    anchors.fill: parent
+	    onClicked: {
+		    if (!MediaPlayer.PlayingState) {
+			vid.play()
+		    } else {
+			vid.stop()
+			root.hide()
+		    }
+	    }
+	}
+
 	Image {
 	    id: closeBtn
 	    anchors.bottom: frame.bottom
@@ -83,7 +97,6 @@ Item {
 		    closeBtn.source = "images/errwin/ok1.png"
 		}
 		onClicked: {
-		    console.log("RUn: ", MediaPlayer.PlayingState)
 		    if (!MediaPlayer.PlayingState) {
 			vid.play()
 		    } else {
@@ -95,8 +108,24 @@ Item {
 	}
 
 	focus: true
-	Keys.onSpacePressed: video.playbackState == MediaPlayer.PlayingState ? video.pause() : video.play()
-	Keys.onLeftPressed: video.seek(video.position - 5000)
-	Keys.onRightPressed: video.seek(video.position + 5000)
     }
+
+    states : State {
+	name: "fullscreen"
+	PropertyChanges {
+	    target: vid
+	    anchors.fill: vid.parent
+	    height: undefined
+	    width: undefined
+	}
+	PropertyChanges {
+	    target: fs_area
+	    enabled: true
+	}
+	PropertyChanges {
+	    target: closeBtn
+	    enabled: false
+	}
+    }
+
 }

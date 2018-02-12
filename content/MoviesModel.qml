@@ -34,6 +34,12 @@ ListModel {
 	gif: "mainscreen/Video.gif"
     }
     ListElement {
+        name: "VIDEO_FS"
+        image: "mainscreen/Video.png"
+        image_bg: "mainscreen/Video_2.png"
+	gif: "mainscreen/Video.gif"
+    }
+    ListElement {
         name: "CORTEX-M4"
         image: "mainscreen/Cortex-M4.png"
         image_bg: "mainscreen/Cortex-M4_2.png"

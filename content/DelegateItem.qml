@@ -31,9 +31,14 @@ Item {
         anchors.fill: parent
         onClicked: {
             if (isSelected) {
-		if (model.name == "VIDEO")
-                    video.show()
-		else if (model.name == "METRICS")
+		console.log("Activate ", model.name)
+		if (model.name == "VIDEO") {
+		    video.state = ""
+		    video.show()
+		} else if (model.name == "VIDEO_FS") {
+		    video.state = "fullscreen"
+		    video.show()
+		} else if (model.name == "METRICS")
 		    metricsView.show()
 		else {
                     errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
