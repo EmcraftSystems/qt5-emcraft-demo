@@ -53,6 +53,10 @@ Item {
 	id: video
     }
 
+    Demo3D {
+	id: demo_3d
+    }
+
     AboutView {
 	id: aboutView
     }

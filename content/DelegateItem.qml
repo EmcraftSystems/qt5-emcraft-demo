@@ -38,6 +38,8 @@ Item {
 		} else if (model.name == "VIDEO_FS") {
 		    video.state = "fullscreen"
 		    video.show()
+		} else if (model.name == "3D DEMO") {
+		    demo_3d.show()
 		} else if (model.name == "METRICS")
 		    metricsView.show()
 		else {
