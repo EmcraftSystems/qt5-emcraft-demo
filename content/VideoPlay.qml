@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtMultimedia 5.0
+import QtGraphicalEffects 1.0
 
 Item {
     id: root
@@ -21,6 +22,12 @@ Item {
     }
     function hide() {
 	visible = false;
+    }
+
+    FastBlur {
+	anchors.fill: parent
+	radius: 64
+	source: mainView
     }
 
     Rectangle {
