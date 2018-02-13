@@ -69,6 +69,14 @@ Item {
 	id: metricsView
     }
 
+    SystemView {
+	id: systemView
+    }
+
+    Cortexm4View {
+	id: cortexm4View
+    }
+
     FpsItem {
     	id: fpsItem
         anchors.top: parent.top

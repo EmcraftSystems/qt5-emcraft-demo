@@ -1,6 +1,4 @@
 import QtQuick 2.0
-//import QtQuick.Controls 2.1
-//import QtQuick.Dialogs
 
 Item {
     id: root
@@ -8,8 +6,6 @@ Item {
     property string text
     property bool isShown: false
 
-    //width: metricsBG.width
-    //height: metricsBG.width
     anchors.fill: parent
     anchors.verticalCenter: parent.verticalCenter
     anchors.horizontalCenter: parent.horizontalCenter
@@ -19,11 +15,9 @@ Item {
         mainView.scheduleUpdate();
         root.isShown = true;
 	visible = true;
-//        showAnimation.restart();
     }
     function hide() {
 	visible = false;
-//        hideAnimation.restart();
     }
 
     Rectangle {
@@ -162,7 +156,7 @@ Item {
 	}
 
         onTriggered: {
-	    fps.text = fpsItem.fps //Math.floor(35 + 10 * Math.random())
+	    fps.text = fpsItem.fps
 
 	    var request = new XMLHttpRequest()
 	    request.open("GET", "file:///sys/class/thermal/thermal_zone0/temp", false)
@@ -186,22 +180,5 @@ Item {
 	    cpu_load[2] = parseInt(lines[3].split(' ')[4])
 	    cpu_load[3] = parseInt(lines[4].split(' ')[4])
 	}
-    }
-
-    Text {
-        id: textItem
-	text: root.text
-	anchors.left: errIcon.right
-	anchors.leftMargin: 30
-	anchors.right: metricsBG.right
-	anchors.rightMargin: 80
-	anchors.top: metricsBG.top
-	anchors.topMargin: 110
-        color: "white"
-        //style: Text.Raised
-        //styleColor: "#000000"
-	font.family: "Arial"
-        font.pixelSize: settings.fontS
-        wrapMode: Text.WordWrap
     }
 }

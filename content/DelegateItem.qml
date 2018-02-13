@@ -40,9 +40,13 @@ Item {
 		    video.show()
 		} else if (model.name == "3D DEMO") {
 		    demo_3d.show()
-		} else if (model.name == "METRICS")
+		} else if (model.name == "METRICS") {
 		    metricsView.show()
-		else {
+		} else if (model.name == "SYSTEM") {
+		    systemView.show()
+		} else if (model.name == "CORTEX-M4") {
+		    cortexm4View.show()
+		} else {
                     errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
 		    errView.show()
 		}
