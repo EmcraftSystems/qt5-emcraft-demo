@@ -86,7 +86,7 @@ Item {
 		     infoBtn.source = "images/mainscreen/info_1.png"
 		 }
 		 onClicked: {
-    		     aboutView.text = ""
+    		     //aboutView.text = ""
 		     aboutView.show()
 		 }
 	     }
@@ -109,7 +109,7 @@ Item {
 		     settingsBtn.source = "images/mainscreen/settings_1.png"
 		 }
 		 onClicked: {
-    		     settingsView.text = ""
+    		     //settingsView.text = ""
 		     settingsView.show()
 		 }
 	     }
