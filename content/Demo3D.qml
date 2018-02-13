@@ -36,6 +36,19 @@ Item {
     }
 
     Rectangle {
+	id: fon_video
+	anchors.fill: parent
+	color: "black"
+	opacity: 0.5
+
+	MouseArea {
+            anchors.fill: parent
+            onClicked: {
+            }
+	}
+    }
+
+    Rectangle {
 	id: frame_3d
 	width : parent.width/100*80
 	height : parent.height/100*80
