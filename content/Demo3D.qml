@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtCanvas3D 1.0
 import "cube_3d.js" as GLCode
+import QtGraphicalEffects 1.0
 
 Item {
     id: root
@@ -28,16 +29,10 @@ Item {
 	objAnimationZ.stop();
     }
 
-    Rectangle {
-	id: fon_3d
+    FastBlur {
 	anchors.fill: parent
-	color: "black"
-	opacity: 0.5
-	MouseArea {
-            anchors.fill: parent
-            onClicked: {
-            }
-	}
+	radius: 64
+	source: mainView
     }
 
     Rectangle {
@@ -137,7 +132,7 @@ Item {
 		    property: "xRotAnim"
 		    from: 0.0
 		    to: 120.0
-		    duration: 7000
+		    duration: 5000
 		    easing.type: Easing.InOutQuad
 		}
 		NumberAnimation {
@@ -145,7 +140,7 @@ Item {
 		    property: "xRotAnim"
 		    from: 120.0
 		    to: 0.0
-		    duration: 7000
+		    duration: 5000
 		    easing.type: Easing.InOutQuad
 		}
 	    }
@@ -160,7 +155,7 @@ Item {
 		    property: "yRotAnim"
 		    from: 0.0
 		    to: 240.0
-		    duration: 5000
+		    duration: 3000
 		    easing.type: Easing.InOutCubic
 		}
 		NumberAnimation {
@@ -168,7 +163,7 @@ Item {
 		    property: "yRotAnim"
 		    from: 240.0
 		    to: 0.0
-		    duration: 5000
+		    duration: 3000
 		    easing.type: Easing.InOutCubic
 		}
 	    }
@@ -182,7 +177,7 @@ Item {
 		    property: "zRotAnim"
 		    from: -100.0
 		    to: 100.0
-		    duration: 3000
+		    duration: 1000
 		    easing.type: Easing.InOutSine
 		}
 		NumberAnimation {
@@ -190,7 +185,7 @@ Item {
 		    property: "zRotAnim"
 		    from: 100.0
 		    to: -100.0
-		    duration: 3000
+		    duration: 1000
 		    easing.type: Easing.InOutSine
 		}
 	    }

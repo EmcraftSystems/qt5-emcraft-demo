@@ -86,7 +86,7 @@ function initializeGL(canvas) {
     gl.depthFunc(gl.LESS);
     gl.enable(gl.CULL_FACE);
     gl.cullFace(gl.BACK);
-    gl.clearColor(0.98, 0.98, 0.98, 1.0);
+    gl.clearColor(0.13, 0.32, 0.44, 1.0);
     gl.clearDepth(1.0);
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
     //! [2]
@@ -149,7 +149,7 @@ function paintGL(canvas) {
         width = currentWidth;
         height = currentHeight;
         gl.viewport(0, 0, width, height);
-        mat4.perspective(pMatrix, degToRad(45), width / height, 0.1, 500.0);
+        mat4.perspective(pMatrix, degToRad(35), width / height, 0.1, 500.0);
         gl.uniformMatrix4fv(pMatrixUniform, false, pMatrix);
     }
     //! [9]
