@@ -38,8 +38,8 @@ Item {
 
     Video {
 	id: vid
-	width : parent.width/100*65
-	height : parent.height/100*65
+	width : parent.width/100*80
+	height : parent.height/100*80
 	anchors.horizontalCenter: parent.horizontalCenter
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.verticalCenterOffset: 20
@@ -52,7 +52,7 @@ Item {
 	    z: -1
 	    anchors.horizontalCenter: parent.horizontalCenter
 	    anchors.top: parent.top
-	    anchors.topMargin: -100
+	    anchors.topMargin: -112
 	    source: "images/Video/video_back.png"
 	    visible: true
 	}
@@ -76,9 +76,9 @@ Item {
 	    height: sourceSize.height * 0.8
 	    width: sourceSize.width * 0.8
 	    anchors.top: frame.top
-	    anchors.topMargin: height - 16
+	    anchors.topMargin: height - 8
 	    anchors.right: frame.right
-	    anchors.rightMargin: width + 10
+	    anchors.rightMargin: width + 18
 
 	    source: "images/Video/close.png"
 	    visible: true
