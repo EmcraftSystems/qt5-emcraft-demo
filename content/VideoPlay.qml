@@ -17,7 +17,7 @@ Item {
         root.isShown = true;
 	visible = true;
 	vid.play()
-	console.log("VID ", vid.height, vid.width)
+	console.log("Video size ", vid.height, vid.width)
     }
     function hide() {
 	visible = false;
@@ -109,26 +109,35 @@ Item {
 	}
     }
 
-    states : State {
-	name: "fullscreen"
-	PropertyChanges {
-	    target: vid
-	    anchors.fill: vid.parent
-	    height: undefined
-	    width: undefined
+    states : [
+	State {
+	    name: "windowed"
+	    PropertyChanges {
+		target: frame
+		visible: true
+	    }
+	},
+	State {
+	    name: "fullscreen"
+	    PropertyChanges {
+		target: vid
+		anchors.fill: vid.parent
+		height: undefined
+		width: undefined
+	    }
+	    PropertyChanges {
+		target: frame
+		visible: false
+	    }
+	    PropertyChanges {
+		target: fs_area
+		enabled: true
+	    }
+	    PropertyChanges {
+		target: closeBtn
+		enabled: false
+	    }
 	}
-	PropertyChanges {
-	    target: frame
-	    visible: false
-	}
-	PropertyChanges {
-	    target: fs_area
-	    enabled: true
-	}
-	PropertyChanges {
-	    target: closeBtn
-	    enabled: false
-	}
-    }
+    ]
 
 }

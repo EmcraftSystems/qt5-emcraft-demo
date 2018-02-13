@@ -33,7 +33,7 @@ Item {
             if (isSelected) {
 		console.log("Activate ", model.name)
 		if (model.name == "VIDEO") {
-		    video.state = ""
+		    video.state = "windowed"
 		    video.show()
 		} else if (model.name == "VIDEO_FS") {
 		    video.state = "fullscreen"
