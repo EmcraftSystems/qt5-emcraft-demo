@@ -156,4 +156,62 @@ Item {
             visible: root.blurAmount
         }
     }
+
+    Timer {
+	id: autodemo
+
+        interval: 1000; running: settings.auto_demo; repeat: true
+
+	property int curtime: 0
+	property int nexttime: 0
+	property int curaction: 0
+	/* scenario descriptior: action to perfrom and delay after action */
+	property var actions: [
+	    [ 3, "" ],
+	    [ 15, "aboutView.show()" ],
+	    [ 1, "aboutView.hide()" ],
+	    [ 15, "settingsView.show()" ],
+	    [ 1, "settingsView.hide()" ],
+	    [ 15, "metricsView.show()" ],
+	    [ 1, "metricsView.hide()" ],
+	    [ 3, "listView.incrementCurrentIndex()" ],
+	    [ 15, "demo_3d.show()" ],
+	    [ 1, "demo_3d.hide()" ],
+	    [ 3, "listView.incrementCurrentIndex()" ],
+	    //[ 15, "demo_3d.show()" ],
+	    //[ 1, "demo_3d.hide()" ],
+	    [ 3, "listView.incrementCurrentIndex()" ],
+	    [ 15, "systemView.show()" ],
+	    [ 1, "systemView.hide()" ],
+	    [ 3, "listView.incrementCurrentIndex()" ],
+	    [ 15, "video.state = \"\"; video.show()" ],
+	    [ 1, "video.hide()" ],
+	    [ 3, "listView.incrementCurrentIndex()" ],
+	    [ 15, "video.state = \"fullscreen\"; video.show()" ],
+	    [ 1, "video.hide()" ],
+	    [ 3, "listView.incrementCurrentIndex()" ],
+	    [ 15, "cortexm4View.show()" ],
+	    [ 1, "cortexm4View.hide()" ],
+	    [ 3, "listView.incrementCurrentIndex()" ],
+	    //[ 15, "systemView.show()" ],
+	    //[ 1, "systemView.hide()" ],
+	    [ 3, "listView.positionViewAtIndex(0, ListView.Center)" ],
+	]
+
+        onTriggered: {
+	    if (nexttime == curtime) {
+		if (actions[curaction][1] != "")
+		    eval(actions[curaction][1])
+		nexttime = curtime + actions[curaction][0]
+		curaction++
+		if (curaction == actions.length) {
+		    curaction = 0
+		    curtime = 0
+		    nexttime = 0
+		    settings.auto_demo = false
+		}
+	    }
+	    curtime++
+	}
+    }
 }
