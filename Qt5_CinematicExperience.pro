@@ -1,7 +1,8 @@
 TEMPLATE = app
 
 QT += qml quick
-SOURCES += main.cpp
+SOURCES += main.cpp launcher.cpp
+HEADERS += launcher.h
 
 target.path = /opt/Qt5_CinematicExperience
 qml.files = Qt5_CinematicExperience.qml content
