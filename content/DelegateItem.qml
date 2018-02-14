@@ -46,6 +46,8 @@ Item {
 		    systemView.show()
 		} else if (model.name == "CORTEX-M4") {
 		    cortexm4View.show()
+		} else if (model.name == "ALEXA") {
+		    alexaView.show()
 		} else {
                     errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
 		    errView.show()

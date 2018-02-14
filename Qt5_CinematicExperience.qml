@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtGraphicalEffects 1.0
 import "content"
+import Launcher 1.0
 //import QtMultimedia 5.8
 
 Item {
@@ -56,6 +57,10 @@ Item {
 
     Demo3D {
 	id: demo_3d
+    }
+
+    AlexaView {
+	id: alexaView
     }
 
     AboutView {
