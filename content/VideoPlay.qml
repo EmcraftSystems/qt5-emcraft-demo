@@ -18,10 +18,12 @@ Item {
         root.isShown = true;
 	visible = true;
 	vid.play()
+	mainView.act = false
 	console.log("Video size ", vid.height, vid.width)
     }
     function hide() {
 	visible = false;
+	mainView.act = true
     }
 
     FastBlur {

@@ -135,6 +135,7 @@ Item {
         id: aniItem
         source: "images/" + model.gif
         visible: root1.isSelected
+	paused: !root1.isSelected | !mainView.act
 	cache: false
     	anchors.verticalCenter: parent.verticalCenter
         //anchors.top: parent.top

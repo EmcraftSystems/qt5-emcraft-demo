@@ -8,6 +8,8 @@ Item {
     // Set this to blur the mainView when showing something on top of it
     property real blurAmount: 0
 
+    property bool act: true
+
     // Updates the blur shader source, best called right before adding blurAmount
     function scheduleUpdate() {
         mainContentSource.scheduleUpdate();
@@ -119,6 +121,7 @@ Item {
 	     //anchors.topMargin: 25
 	     anchors.right: parent.right
 	     //anchors.rightMargin: 15
+	     paused: !root.act
 	}
 
 	Text {

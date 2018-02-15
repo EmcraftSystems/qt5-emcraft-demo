@@ -15,9 +15,11 @@ Item {
         mainView.scheduleUpdate();
         root.isShown = true;
 	visible = true;
+	mainView.act = false
     }
     function hide() {
 	visible = false;
+	mainView.act = true
     }
 
     FastBlur {
