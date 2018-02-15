@@ -3,7 +3,7 @@ import QtQuick 2.0
 BaseView {
     Image {
         id: bgimage
-	source: "images/Cortex-M4 Demo/Cortex-M4 Demo.png"
+	source: "images/CortexM4/CortexM4-frame.png"
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.horizontalCenter: parent.horizontalCenter
 
