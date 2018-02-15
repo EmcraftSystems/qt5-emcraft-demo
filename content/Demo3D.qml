@@ -18,6 +18,7 @@ Item {
         mainView.scheduleUpdate();
         root.isShown = true;
 	visible = true;
+	mainView.act = false
 	objAnimationX.start();
 	objAnimationY.start();
 	objAnimationZ.start();
@@ -27,6 +28,7 @@ Item {
 	objAnimationX.stop();
 	objAnimationY.stop();
 	objAnimationZ.stop();
+	mainView.act = true
     }
 
     FastBlur {
