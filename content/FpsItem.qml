@@ -10,7 +10,7 @@ Item {
 
     Image {
         id: spinnerImage
-        source: "images/spinner.png"
+        source: ""
         NumberAnimation on rotation {
             from:0
             to: 360

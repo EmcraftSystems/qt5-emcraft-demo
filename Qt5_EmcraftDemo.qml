@@ -8,7 +8,6 @@ Item {
     id: mainWindow
 
     property int curIdx: 0
-    property variant items: menuModel
     
     width: 1920
     height: 1080
@@ -35,16 +34,8 @@ Item {
         id: mainView
     }
 
-    InfoView {
-        id: infoView
-    }
-
-    DetailsView {
-        id: detailsView
-    }
-
-    MoviesModel {
-        id: moviesModel
+    MainListModel {
+        id: mainListModel
     }
 
     ErrorView {

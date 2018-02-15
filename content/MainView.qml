@@ -41,13 +41,10 @@ Item {
 	    anchors.verticalCenter: parent.verticalCenter
     	    anchors.horizontalCenter: parent.horizontalCenter
 
-            property real globalLightPosX: lightImage.x / root.width
-            property real globalLightPosY: lightImage.y / root.height
-
             // Normal-mapped cover shared among delegates
             ShaderEffectSource {
                 id: coverNmapSource
-                sourceItem: Image { source: "images/oval.png" }
+                sourceItem: Image { source: "" }
                 hideSource: true
                 visible: false
         	anchors.bottom: parent.bottom
@@ -57,7 +54,7 @@ Item {
 
             //anchors.fill: parent
             spacing: -60
-            model: moviesModel
+            model: mainListModel
             delegate: DelegateItem {
                 name: model.name
             }

@@ -54,7 +54,6 @@ Item {
 		}
             } else {
                 listView.currentIndex = index;
-                if (settings.showShootingStarParticles) shootingStarBurst.burst(50);
             }
         }
     }
