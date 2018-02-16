@@ -75,10 +75,11 @@ Item {
     }
 
     FpsItem {
-    	id: fpsItem
-        anchors.top: parent.top
-        anchors.topMargin: -100
-        anchors.left: parent.left
-        anchors.leftMargin: 8
+	id: fpsItem
+	anchors.bottom: parent.bottom
+	anchors.bottomMargin: 8
+	anchors.right: parent.right
+	anchors.rightMargin: 64
+	visible: false
     }
 }
