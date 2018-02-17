@@ -15,7 +15,6 @@ Item {
     z: isSelected ? 1000 : -index
 //    rotation: isSelected ? 0 : -15
     scale: isSelected ? 1.6 : 1
-    opacity: Math.abs(listView.currentIndex - index) > 1 ? 0 : 1
 
     Behavior on rotation {
         NumberAnimation { duration: 500; easing.type: Easing.OutBack }

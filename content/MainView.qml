@@ -33,15 +33,13 @@ Item {
             id: background
         }
 
-        ListView {
+        PathView {
             id: listView
 
-	    width: parent.width * 0.8
-	    height: parent.height * 0.6
-
-	    orientation: Qt.Horizontal
 	    anchors.verticalCenter: parent.verticalCenter
     	    anchors.horizontalCenter: parent.horizontalCenter
+	    anchors.fill: parent
+	    property int list_offset: 56
 
             // Normal-mapped cover shared among delegates
             ShaderEffectSource {
@@ -54,18 +52,23 @@ Item {
 		width: 256
             }
 
-            //anchors.fill: parent
-            spacing: -60
             model: mainListModel
             delegate: DelegateItem {
                 name: model.name
             }
-            highlightFollowsCurrentItem: true
-            highlightRangeMode: ListView.StrictlyEnforceRange
             highlightMoveDuration: 400
-            preferredHighlightBegin: root.width * 0.5 - 380
-            preferredHighlightEnd: root.width * 0.5
-            cacheBuffer: 4000
+
+	    pathItemCount: 3
+	    preferredHighlightBegin: 0.5
+	    preferredHighlightEnd: 0.5
+	    highlightRangeMode: PathView.StrictlyEnforceRange
+
+	    path: Path {
+		startX: mainViewArea.width/5 + listView.list_offset
+		startY: mainViewArea.height/2
+		PathLine { x: mainViewArea.width/2 + listView.list_offset; y: mainViewArea.height/2}
+		PathLine { x: (mainViewArea.width/5)*4 + listView.list_offset; y: mainViewArea.height/2}
+	    }
         }
 
 	Image {
