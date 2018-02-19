@@ -1,8 +1,8 @@
 TEMPLATE = app
 
 QT += qml quick
-SOURCES += main.cpp launcher.cpp
-HEADERS += launcher.h
+SOURCES += main.cpp launcher.cpp fileio.cpp
+HEADERS += launcher.h fileio.h
 
 target.path = /usr/bin
 qml.files = Qt5_EmcraftDemo.qml content

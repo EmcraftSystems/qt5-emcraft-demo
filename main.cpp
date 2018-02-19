@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQuickView>
 #include <launcher.h>
+#include <fileio.h>
 
 int main(int argc, char* argv[])
 {
@@ -8,6 +9,7 @@ int main(int argc, char* argv[])
     QQuickView view;
 
     qmlRegisterType<Launcher>("Launcher", 1, 0, "Process");
+    qmlRegisterType<FileIO>("FileIO", 1, 0, "FileIO");
 
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.setSource(QUrl::fromLocalFile(QLatin1String(
