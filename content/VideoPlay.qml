@@ -52,7 +52,7 @@ Item {
 	anchors.horizontalCenter: parent.horizontalCenter
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.verticalCenterOffset: 20
-	source: "demo.mp4"
+	source: "demo.webm"
 
 	Image {
 	    id: frame
