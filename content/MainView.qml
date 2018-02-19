@@ -57,6 +57,8 @@ Item {
                 name: model.name
             }
             highlightMoveDuration: 400
+	    flickDeceleration: 50
+	    cacheItemCount: count * 2
 
 	    pathItemCount: 3
 	    preferredHighlightBegin: 0.5
