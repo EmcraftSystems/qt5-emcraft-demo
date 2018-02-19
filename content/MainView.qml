@@ -172,35 +172,33 @@ Item {
 	property int curaction: 0
 	/* scenario descriptior: action to perfrom and delay after action */
 	property var actions: [
-	    [ 3, "" ],
-	    [ 15, "aboutView.show()" ],
-	    [ 1, "aboutView.hide()" ],
-	    [ 15, "settingsView.show()" ],
-	    [ 1, "settingsView.hide()" ],
-	    [ 15, "metricsView.show()" ],
-	    [ 1, "metricsView.hide()" ],
-	    [ 3, "listView.incrementCurrentIndex()" ],
-	    [ 15, "demo_3d.show()" ],
-	    [ 1, "demo_3d.hide()" ],
-	    [ 3, "listView.incrementCurrentIndex()" ],
-	    //[ 15, "demo_3d.show()" ],
-	    //[ 1, "demo_3d.hide()" ],
-	    [ 3, "listView.incrementCurrentIndex()" ],
-	    [ 15, "systemView.show()" ],
-	    [ 1, "systemView.hide()" ],
-	    [ 3, "listView.incrementCurrentIndex()" ],
-	    [ 15, "video.state = \"\"; video.show()" ],
-	    [ 1, "video.hide()" ],
-	    [ 3, "listView.incrementCurrentIndex()" ],
-	    [ 15, "video.state = \"fullscreen\"; video.show()" ],
-	    [ 1, "video.hide()" ],
-	    [ 3, "listView.incrementCurrentIndex()" ],
-	    [ 15, "cortexm4View.show()" ],
-	    [ 1, "cortexm4View.hide()" ],
-	    [ 3, "listView.incrementCurrentIndex()" ],
-	    //[ 15, "systemView.show()" ],
-	    //[ 1, "systemView.hide()" ],
-	    [ 3, "listView.positionViewAtIndex(0, ListView.Center)" ],
+	    [ 2, "" ],
+	    [ 8, "systemView.show()" ],
+	    [ 2, "systemView.hide()" ],
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    [ 8, "video.state = \"windowed\"; video.show()" ],
+	    [ 2, "video.hide()" ],
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    //[ 8, "alexView.show()" ],
+	    //[ 2, "alexaView.hide()" ],
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    [ 8, "demo_3d.show()" ],
+	    [ 2, "demo_3d.hide()" ],
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    [ 8, "metricsView.show()" ],
+	    [ 2, "metricsView.hide()" ],
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    //[ 8, "cortexm4View.show()" ],
+	    //[ 2, "cortexm4View.hide()" ],
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    [ 8, "video.state = \"fullscreen\"; video.show()" ],
+	    [ 2, "video.hide()" ],
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    //cameraView
+	    [ 2, "listView.incrementCurrentIndex()" ],
+	    [ 8, "aboutView.show()" ],
+	    [ 2, "aboutView.hide()" ],
+	    [ 3, ""],
 	]
 
         onTriggered: {
@@ -211,9 +209,9 @@ Item {
 		curaction++
 		if (curaction == actions.length) {
 		    curaction = 0
-		    curtime = 0
+		    curtime = -1
 		    nexttime = 0
-		    settings.auto_demo = false
+		    //settings.auto_demo = false
 		}
 	    }
 	    curtime++
