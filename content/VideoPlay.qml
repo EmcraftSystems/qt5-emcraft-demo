@@ -23,6 +23,7 @@ Item {
     }
     function hide() {
 	visible = false;
+	vid.stop()
 	mainView.act = true
     }
 
