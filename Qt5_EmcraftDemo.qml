@@ -27,7 +27,7 @@ Item {
         property bool showLighting: true
         property bool showColors: true
         property real modal_opacity: 0.75
-        property bool auto_demo: false
+        property bool auto_demo: true
     }
 
     MainView {
