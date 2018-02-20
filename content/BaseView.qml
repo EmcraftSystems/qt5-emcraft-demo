@@ -5,6 +5,8 @@ Item {
     id: root
     
     property bool isShown: false
+    property string show_callback
+    property string hide_callback
 
     anchors.fill: parent
     anchors.verticalCenter: parent.verticalCenter
@@ -16,8 +18,10 @@ Item {
         root.isShown = true;
 	visible = true;
 	mainView.act = false
+	eval(show_callback)
     }
     function hide() {
+	eval(hide_callback)
 	visible = false;
 	mainView.act = true
     }
