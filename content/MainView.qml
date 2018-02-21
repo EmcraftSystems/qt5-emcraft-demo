@@ -132,8 +132,8 @@ Item {
 	     paused: !root.act
 
 	    Rectangle {
-		width: 8
-		height: 8
+		width: 16
+		height: 16
 		z: -1
 		anchors.top: parent.top
 		anchors.topMargin: 50
@@ -145,7 +145,7 @@ Item {
 		    anchors.fill: parent
 		    onClicked: {
 			settings.tv_mode = !settings.tv_mode
-			console.log("MODE: ", settings.tv_mode)
+			console.log("MODE: ", settings.tv_mode ? "TV" : "monitor")
 		    }
 		}
 	    }
