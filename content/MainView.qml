@@ -15,6 +15,14 @@ Item {
         mainContentSource.scheduleUpdate();
     }
 
+    function updateVideoSource() {
+	if (mainListModel.get(listView.currentIndex).name.indexOf("VIDEO") == 0) {
+	    video.vid_src = "demo.mp4"
+	} else {
+	    video.vid_src = ""
+	}
+    }
+
     anchors.fill: parent
 
     // Update blur shader source when width/height changes
@@ -71,6 +79,14 @@ Item {
 		PathLine { x: mainViewArea.width/2 + listView.list_offset; y: mainViewArea.height/2}
 		PathLine { x: (mainViewArea.width/5)*4 + listView.list_offset; y: mainViewArea.height/2}
 	    }
+
+	    onCurrentIndexChanged: {
+		if (!moving && !flicking) {
+		    updateVideoSource()
+		}
+	    }
+	    onMovementEnded: updateVideoSource()
+	    onFlickEnded: updateVideoSource()
         }
 
 	Image {

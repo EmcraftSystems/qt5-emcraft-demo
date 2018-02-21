@@ -7,6 +7,7 @@ Item {
     
     property string text
     property bool isShown: false
+    property string vid_src: ""
 
     anchors.fill: parent
     anchors.verticalCenter: parent.verticalCenter
@@ -14,6 +15,7 @@ Item {
     visible: false
     
     function show() {
+	console.log("VID: ", vid.source)
         mainView.scheduleUpdate();
         root.isShown = true;
 	visible = true;
@@ -53,7 +55,7 @@ Item {
 	anchors.horizontalCenter: parent.horizontalCenter
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.verticalCenterOffset: 20
-	source: "demo.webm"
+	source: vid_src
 
 	Image {
 	    id: frame
