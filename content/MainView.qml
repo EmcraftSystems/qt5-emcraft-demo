@@ -47,37 +47,25 @@ Item {
 	    anchors.verticalCenter: parent.verticalCenter
     	    anchors.horizontalCenter: parent.horizontalCenter
 	    anchors.fill: parent
-	    property int list_offset: 56
-
-            // Normal-mapped cover shared among delegates
-            ShaderEffectSource {
-                id: coverNmapSource
-                sourceItem: Image { source: "" }
-                hideSource: true
-                visible: false
-        	anchors.bottom: parent.bottom
-		height: 256
-		width: 256
-            }
+	    property int list_offset: mainViewArea.width/15
 
             model: mainListModel
             delegate: DelegateItem {
                 name: model.name
             }
             highlightMoveDuration: 400
-	    flickDeceleration: 50
-	    cacheItemCount: count * 2
+	    flickDeceleration: 80
 
-	    pathItemCount: 3
+	    pathItemCount: 8
 	    preferredHighlightBegin: 0.5
 	    preferredHighlightEnd: 0.5
 	    highlightRangeMode: PathView.StrictlyEnforceRange
 
 	    path: Path {
-		startX: mainViewArea.width/5 + listView.list_offset
+		startX: -mainViewArea.width/3 + listView.list_offset
 		startY: mainViewArea.height/2
 		PathLine { x: mainViewArea.width/2 + listView.list_offset; y: mainViewArea.height/2}
-		PathLine { x: (mainViewArea.width/5)*4 + listView.list_offset; y: mainViewArea.height/2}
+		PathLine { x: mainViewArea.width/3 * 4; y: mainViewArea.height/2}
 	    }
 
 	    onCurrentIndexChanged: {
