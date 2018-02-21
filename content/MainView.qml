@@ -130,6 +130,25 @@ Item {
 	     anchors.right: parent.right
 	     anchors.rightMargin: settings.tv_mode ? 15 : 0
 	     paused: !root.act
+
+	    Rectangle {
+		width: 8
+		height: 8
+		z: -1
+		anchors.top: parent.top
+		anchors.topMargin: 50
+		anchors.left: parent.left
+		anchors.leftMargin: 5
+		enabled: true
+
+		MouseArea {
+		    anchors.fill: parent
+		    onClicked: {
+			settings.tv_mode = !settings.tv_mode
+			console.log("MODE: ", settings.tv_mode)
+		    }
+		}
+	    }
 	}
 
 	Text {
