@@ -31,6 +31,7 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: {
+	    autoDemoStop()
             if (isSelected) {
 		console.log("Activate ", model.name)
 		if (model.name == "VIDEO") {

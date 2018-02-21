@@ -22,6 +22,22 @@ Item {
 	}
     }
 
+    function autoDemoStop() {
+	settings.auto_demo = false
+	autodemo.curtime = 0
+	autodemo.curaction = 0
+	autodemo.nexttime = 0
+	autodemo.stop()
+    }
+
+    function autoDemoStart() {
+	settings.auto_demo = true
+	autodemo.curtime = 0
+	autodemo.curaction = 0
+	autodemo.nexttime = 0
+	autodemo.start()
+    }
+
     anchors.fill: parent
 
     // Update blur shader source when width/height changes
@@ -72,15 +88,38 @@ Item {
 		    updateVideoSource()
 		}
 	    }
+	    onMovementStarted: autoDemoStop()
 	    onMovementEnded: updateVideoSource()
+	    onFlickStarted: autoDemoStop()
 	    onFlickEnded: updateVideoSource()
         }
 
 	Image {
+	    id: autoDemoBtn
+	    source: "images/mainscreen/demo_btn_" + (settings.auto_demo ? "2.png" : "1.png")
+	    anchors.verticalCenter: parent.verticalCenter
+	    anchors.verticalCenterOffset: -sourceSize.height
+	    anchors.left: parent.left
+	    anchors.leftMargin: settings.tv_mode ? sourceSize.width/3 - 4 : 15 - 4
+
+	    MouseArea {
+		id: btn
+		anchors.fill: parent
+		onClicked: {
+		    if (settings.auto_demo) {
+			autoDemoStop()
+		    } else {
+			autoDemoStart()
+		    }
+		}
+	    }
+	}
+
+	Image {
 	     id: infoBtn
 	     source: "images/mainscreen/info_1.png"
-	     anchors.verticalCenter: parent.verticalCenter
-	     anchors.verticalCenterOffset: 30
+	     anchors.top: autoDemoBtn.bottom
+	     anchors.topMargin: 15
 	     anchors.left: parent.left
 	     anchors.leftMargin: settings.tv_mode ? sourceSize.width/3 : 15
 
@@ -194,7 +233,7 @@ Item {
 	property int curaction: 0
 	/* scenario descriptior: action to perfrom and delay after action */
 	property var actions: [
-	    [ 2, "" ],
+	    [ 4, "listView.positionViewAtIndex(0, PathView.Center)" ],
 	    [ 8, "systemView.show()" ],
 	    [ 2, "systemView.hide()" ],
 	    [ 4, "listView.incrementCurrentIndex()" ],
