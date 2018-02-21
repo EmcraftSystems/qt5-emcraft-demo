@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtQuick.Particles 2.0
 import QtGraphicalEffects 1.0
 
 Item {
@@ -83,7 +82,7 @@ Item {
 	     anchors.verticalCenter: parent.verticalCenter
 	     anchors.verticalCenterOffset: 30
 	     anchors.left: parent.left
-	     anchors.leftMargin: 15
+	     anchors.leftMargin: settings.tv_mode ? sourceSize.width/3 : 15
 
 	     MouseArea {
 	         anchors.fill: parent
@@ -106,7 +105,7 @@ Item {
 	     anchors.top: infoBtn.bottom
 	     anchors.topMargin: 15
 	     anchors.left: parent.left
-	     anchors.leftMargin: 15
+	     anchors.leftMargin: settings.tv_mode ? sourceSize.width/3 : 15
 
 	     MouseArea {
 	         anchors.fill: parent
@@ -129,7 +128,7 @@ Item {
 	     anchors.top: parent.top
 	     //anchors.topMargin: 25
 	     anchors.right: parent.right
-	     //anchors.rightMargin: 15
+	     anchors.rightMargin: settings.tv_mode ? 15 : 0
 	     paused: !root.act
 	}
 
