@@ -5,6 +5,7 @@ Item {
 
     property string name
     property bool isSelected: listView.currentIndex === index
+    property bool gif_off: true
 
     anchors.verticalCenter: parent.verticalCenter
     anchors.verticalCenterOffset: isSelected ? 30 : -0
@@ -22,7 +23,18 @@ Item {
         NumberAnimation { duration: 500; easing.type: Easing.OutBack }
     }
     Behavior on scale {
-        NumberAnimation { duration: 2500; easing.type: Easing.OutElastic }
+	SequentialAnimation  {
+	    NumberAnimation { duration: 2500; easing.type: Easing.OutElastic }
+	    ScriptAction { script:
+		if (isSelected) {
+		    gif_off = false
+		    aniItem.source = "images/" + model.gif
+		} else {
+		    gif_off = true
+		    aniItem.source = ""
+		}
+	    }
+	}
     }
     Behavior on opacity {
         NumberAnimation { duration: 200; easing.type: Easing.OutQuad }
@@ -79,13 +91,13 @@ Item {
     }
 
     AnimatedImage {
-        id: aniItem
-        source: "images/" + model.gif
-        visible: root1.isSelected && !listView.moving && !listView.flicking
-	paused: !root1.isSelected | !mainView.act
+	id: aniItem
+	source: ""
+	visible: root1.isSelected && !listView.moving && !listView.flicking
+	paused: !root1.isSelected | !mainView.act | gif_off
 	cache: false
-    	anchors.verticalCenter: parent.verticalCenter
-        //anchors.top: parent.top
+	anchors.verticalCenter: parent.verticalCenter
+	//anchors.top: parent.top
 	height: parent.height * 0.8
 	width: parent.width * 0.9
     }
