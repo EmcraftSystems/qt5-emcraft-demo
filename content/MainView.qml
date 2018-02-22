@@ -162,13 +162,14 @@ Item {
 	}
 
 	AnimatedImage {
-	     id: nxplogo
-	     source: "images/mainscreen/NXP_logo.gif"
-	     anchors.top: parent.top
-	     //anchors.topMargin: 25
-	     anchors.right: parent.right
-	     anchors.rightMargin: settings.tv_mode ? 15 : 0
-	     paused: !root.act
+	    id: nxplogo
+	    source: "images/mainscreen/NXP_logo.gif"
+	    anchors.top: parent.top
+	    //anchors.topMargin: 25
+	    anchors.right: parent.right
+	    anchors.rightMargin: settings.tv_mode ? 15 : 0
+	    paused: !root.act
+	    cache: false
 
 	    Rectangle {
 		width: 16
