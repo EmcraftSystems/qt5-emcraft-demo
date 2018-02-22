@@ -278,4 +278,6 @@ Item {
 	    curtime++
 	}
     }
+
+    Component.onCompleted: listView.currentItem.switch_gif()
 }

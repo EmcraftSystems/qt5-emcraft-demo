@@ -18,6 +18,15 @@ Item {
     opacity: isSelected || ((listView.currentIndex + 7) % 8) == index ||
 	((listView.currentIndex + 1) % 8) == index
 
+    function switch_gif() {
+	if (isSelected) {
+	    gif_off = false
+	    aniItem.source = "images/" + model.gif
+	} else {
+	    gif_off = true
+	    aniItem.source = ""
+	}
+    }
 
     Behavior on rotation {
         NumberAnimation { duration: 500; easing.type: Easing.OutBack }
@@ -25,15 +34,7 @@ Item {
     Behavior on scale {
 	SequentialAnimation  {
 	    NumberAnimation { duration: 2500; easing.type: Easing.OutElastic }
-	    ScriptAction { script:
-		if (isSelected) {
-		    gif_off = false
-		    aniItem.source = "images/" + model.gif
-		} else {
-		    gif_off = true
-		    aniItem.source = ""
-		}
-	    }
+	    ScriptAction { script: switch_gif() }
 	}
     }
     Behavior on opacity {
