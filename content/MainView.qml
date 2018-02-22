@@ -279,5 +279,5 @@ Item {
 	}
     }
 
-    Component.onCompleted: listView.currentItem.switch_gif()
+    Component.onCompleted: listView.currentItem.set_gif_src()
 }
