@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick quickcontrols2 serialport
+QT += qml quick serialport
 SOURCES += main.cpp launcher.cpp fileio.cpp serialio.cpp
 HEADERS += launcher.h fileio.h serialio.h
 
