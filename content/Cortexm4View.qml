@@ -1,6 +1,8 @@
 import QtQuick 2.0
+import SerialIO 1.0
 
 BaseView {
+    property string dev: "/dev/ttyRPMSG30"
     Image {
         id: bgimage
 	source: "images/CortexM4/CortexM4-frame.png"
@@ -22,11 +24,33 @@ BaseView {
 	}
     }
 
+    show_callback: "timer.start()"
+    hide_callback: "timer.stop()"
+
+    SerialIO {
+	id: sline
+	pname: dev
+    }
+
     Timer {
-        interval: 1000; running: cortexm4View.isShown; repeat: true
+	id: timer
+	interval: 1000; running: false; repeat: true
+	property string str: "ping M4 " + cnt + "\n\r"
+	property int cnt: 0
+	property string line
 
         onTriggered: {
-	    ping.text = parseInt(ping.text) + 1
+	    console.log(sline.write(str))
+	    line = sline.readAll()
+	    console.log(str)
+	    console.log(line)
+	    console.log(str.length, line.length)
+	    console.log(str.localeCompare(line))
+	    console.log(line.charCodeAt(9), line.charCodeAt(10), line.charCodeAt(11))
+	    if (!str.localeCompare(line)) {
+		ping.text = parseInt(ping.text) + 1
+		cnt++
+	    }
 	}
     }
 }

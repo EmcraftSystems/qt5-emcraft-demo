@@ -2,6 +2,7 @@
 #include <QQuickView>
 #include <launcher.h>
 #include <fileio.h>
+#include <serialio.h>
 
 int main(int argc, char* argv[])
 {
@@ -10,6 +11,7 @@ int main(int argc, char* argv[])
 
     qmlRegisterType<Launcher>("Launcher", 1, 0, "Process");
     qmlRegisterType<FileIO>("FileIO", 1, 0, "FileIO");
+    qmlRegisterType<SerialIO>("SerialIO", 1, 0, "SerialIO");
 
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.setSource(QUrl::fromLocalFile(QLatin1String(

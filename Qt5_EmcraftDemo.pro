@@ -1,8 +1,8 @@
 TEMPLATE = app
 
-QT += qml quick
-SOURCES += main.cpp launcher.cpp fileio.cpp
-HEADERS += launcher.h fileio.h
+QT += qml quick quickcontrols2 serialport
+SOURCES += main.cpp launcher.cpp fileio.cpp serialio.cpp
+HEADERS += launcher.h fileio.h serialio.h
 
 target.path = /usr/bin
 qml.files = Qt5_EmcraftDemo.qml content
