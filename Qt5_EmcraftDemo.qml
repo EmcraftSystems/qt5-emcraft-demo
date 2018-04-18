@@ -71,9 +71,9 @@ Item {
 	id: systemView
     }
 
-    Cortexm4View {
-	id: cortexm4View
-    }
+    //Cortexm4View {
+	//id: cortexm4View
+    //}
 
     FpsItem {
 	id: fpsItem
