@@ -81,6 +81,6 @@ Item {
 	anchors.bottomMargin: 8
 	anchors.right: parent.right
 	anchors.rightMargin: 64
-	visible: false
+	visible: true
     }
 }
