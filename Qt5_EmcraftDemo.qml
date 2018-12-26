@@ -78,9 +78,9 @@ Item {
     FpsItem {
 	id: fpsItem
 	anchors.bottom: parent.bottom
-	anchors.bottomMargin: 8
+	anchors.bottomMargin: 50
 	anchors.right: parent.right
 	anchors.rightMargin: 64
-	visible: true
+	visible: false
     }
 }
