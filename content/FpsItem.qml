@@ -31,11 +31,11 @@ Item {
     }
 
     Timer {
-        interval: 2000
+        interval: 1000
         repeat: true
         running: true
         onTriggered: {
-            fps = frameCounter/2;
+            fps = frameCounter/(interval / 1000);
             frameCounter = 0;
         }
     }
