@@ -163,7 +163,7 @@ Item {
 
 	AnimatedImage {
 	    id: nxplogo
-	    source: "images/mainscreen/NXP_logo.gif"
+	    source: "images/mainscreen/NXP_logo-mini.gif"
 	    anchors.top: parent.top
 	    //anchors.topMargin: 25
 	    anchors.right: parent.right

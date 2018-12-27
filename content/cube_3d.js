@@ -126,7 +126,7 @@ function initializeGL(canvas) {
     qtLogoImage.imageLoadingFailed.connect(function() {
         console.log("Texture load FAILED, "+qtLogoImage.errorString);
     });
-    qtLogoImage.src = "images/Demo3D/logo_cube.jpg";
+    qtLogoImage.src = "images/Demo3D/logo_cube-mini.gif";
 }
 
 function resizeGL(canvas)
