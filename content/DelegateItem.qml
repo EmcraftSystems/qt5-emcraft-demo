@@ -58,9 +58,13 @@ Item {
 		} else if (model.name == "SYSTEM") {
 		    systemView.show()
 		} else if (model.name == "CORTEX-M4") {
-		    cortexm4View.show()
+//		    cortexm4View.show()
+                    errView.text = "Unable to interact with Cortex-M4 due to the following error: Cortex-M4 task isn't started"
+		    errView.show()
 		} else if (model.name == "ALEXA") {
-		    alexaView.show()
+//		    alexaView.show()
+                    errView.text = "Unable to feed sound to Alexa due to the following error: Microphone not connected or unrecognized by the system"
+		    errView.show()
 		} else {
                     errView.text = "Unable to play live camera feed due to the following error: Camera not connected or unrecognized by the system"
 		    errView.show()
